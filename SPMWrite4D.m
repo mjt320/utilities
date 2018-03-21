@@ -1,12 +1,13 @@
 function SPMWrite4D(vol4D,data,outDir,fileName,datatype)
-%vol4D: template 4D SPM header struct array
-%data: 4D data
+%write 3D or 4D file using SPM header struct array as template
+%vol4D: template 3D or 4D SPM header struct array
+%data: 3D or 4D data
 %outdir: output directory
 %filename: without extension
 %datatype: spm datatype, e.g. 16 for float
 
 vol3D=vol4D(1);
-NFrames=size(vol4D,1);
+NFrames=size(data,4);
 
 for iFrame=1:NFrames
     volOut=vol3D;
