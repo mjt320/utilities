@@ -16,7 +16,7 @@ else
     mask=ROI;
 end
 
-if ~isempty(find(mask ~= 1 & mask ~= 0)); error(['Mask ' ROIMaskFileName ' contains voxels which are not 0/1!']); end; %check masks contain only 0 and 1
+if ~isempty(find(mask ~= 1 & mask ~= 0)); error(['Mask contains voxels which are not 0 or 1!']); end; %check masks contain only 0 and 1
 
 N=size(signal,4);
 
